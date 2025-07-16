@@ -31,6 +31,7 @@ const Navbar = () => {
             </>
           ) : (
             <>
+              <Link href="/write">Write</Link>
               <p className="capitalize">{session.data.user.name}</p>
               <Button variant="destructive" onClick={logout}>
                 Logout
