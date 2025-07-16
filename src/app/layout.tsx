@@ -1,13 +1,12 @@
+import Navbar from "@/components/Navbar";
+import { Toaster } from "@/components/ui/sonner";
+import NextAuthProvider from "@/providers/NextAuthProvider";
+import NuqsProvider from "@/providers/NuqsProvider";
+import ReactQueryProvider from "@/providers/ReactQueryProvider";
+import { ThemeProvider } from "@/providers/ThemeProvider";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import ReactQueryProvider from "@/providers/ReactQueryProvider";
-import { Toaster } from "@/components/ui/sonner";
-import NextAuthProvider from "@/providers/NextAuthProvider";
-import { ThemeProvider } from "@/providers/ThemeProvider";
-import { NuqsAdapter } from "nuqs/adapters/next/app";
-import NuqsProvider from "@/providers/NuqsProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
