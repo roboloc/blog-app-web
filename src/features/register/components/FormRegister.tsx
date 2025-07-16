@@ -85,6 +85,7 @@ const FormRegister = () => {
                   id="password"
                   name="password"
                   type="password"
+                  placeholder="Your password"
                   onBlur={formik.handleBlur}
                   onChange={formik.handleChange}
                   value={formik.values.password}
@@ -98,7 +99,11 @@ const FormRegister = () => {
               </div>
             </div>
             <div className="mt-6">
-              <Button type="submit" className="w-full" disabled={isPending}>
+              <Button
+                type="submit"
+                className="w-full bg-orange-600 text-white"
+                disabled={isPending}
+              >
                 {isPending ? "Loading" : "Register"}
               </Button>
             </div>

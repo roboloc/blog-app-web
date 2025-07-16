@@ -2,6 +2,7 @@ import NextAuth from "next-auth";
 import Creadentials from "next-auth/providers/credentials";
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
+  trustHost: true,
   providers: [
     //tambahin import google credential ataupun lainnya di sini
     Creadentials({

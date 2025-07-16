@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ModeToggle } from "./ModeToggle";
 import { Button } from "./ui/button";
+import { michroma } from "@/assets/fonts";
 
 const Navbar = () => {
   const router = useRouter();
@@ -17,31 +18,31 @@ const Navbar = () => {
   };
 
   return (
-    <div className="bg-gray-300 dark:bg-transparent">
-      <nav className="container mx-auto flex items-center justify-between p-4">
-        <Link href="/">
-          <p className="text-2xl font-bold">BlogHub</p>
-        </Link>
-        <div className="flex items-center gap-4">
-          <Link href="/">Home</Link>
-          {!session.data?.user ? (
-            <>
-              <Link href="/login">Login</Link>
-              <Link href="/register">Register</Link>
-            </>
-          ) : (
-            <>
-              <Link href="/write">Write</Link>
-              <p className="capitalize">{session.data.user.name}</p>
-              <Button variant="destructive" onClick={logout}>
-                Logout
-              </Button>
-            </>
-          )}
-          <ModeToggle />
-        </div>
-      </nav>
-    </div>
+    <nav className="container mx-auto flex items-center justify-between p-4">
+      <Link href="/">
+        <p className={`text-2xl ${michroma.className}`}>
+          Blog<span className="text-orange-600"> Hub</span>
+        </p>
+      </Link>
+      <div className="flex items-center gap-4">
+        <Link href="/">Home</Link>
+        {!session.data?.user ? (
+          <>
+            <Link href="/login">Login</Link>
+            <Link href="/register">Register</Link>
+          </>
+        ) : (
+          <>
+            <Link href="/write">Write</Link>
+            {/* <p className="capitalize">{session.data.user.name}</p> */}
+            <Button variant="destructive" onClick={logout}>
+              Logout
+            </Button>
+          </>
+        )}
+        <ModeToggle />
+      </div>
+    </nav>
   );
 };
 

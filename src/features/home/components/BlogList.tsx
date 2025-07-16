@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { useDebounceValue } from "usehooks-ts";
 import PaginationSection from "@/components/PaginationSection";
 import { parseAsInteger, useQueryState } from "nuqs";
+import NoData from "@/components/NoData";
 
 const BlogList = () => {
   // const [search, setSearch] = useState<string>("");
@@ -39,6 +40,9 @@ const BlogList = () => {
             <Loader className="animate-spin" />
           </div>
         )}
+
+        {!isPending && !blogs?.data.length && <NoData />}
+
         {blogs?.data.map((blog) => (
           <BlogCard key={blog.id} blog={blog} />
         ))}
